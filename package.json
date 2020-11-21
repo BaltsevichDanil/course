@@ -1,0 +1,8 @@
+{
+  "name": "course",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/totdlinnyy1/course.git",
+  "author": "Danil Baltsevich <gnngr333@gmail.com>",
+  "license": "MIT"
+}
