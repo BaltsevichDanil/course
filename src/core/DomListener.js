@@ -15,7 +15,8 @@ export class DomListener {
       if (!this[method]) {
         throw new Error(`${method} is not implemented in ${this.name || ''}`)
       }
-      this.$root.on(listener, this[method].bind(this))
+      this[method] = this[method].bind(this)
+      this.$root.on(listener, this[method])
     })
   }
 
@@ -25,7 +26,7 @@ export class DomListener {
       if (!this[method]) {
         throw new Error(`${method} is not implemented in ${this.name || ''}`)
       }
-      this.$root.off(listener, this[method].bind(this))
+      this.$root.off(listener, this[method])
     })
   }
 }
