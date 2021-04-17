@@ -15,6 +15,7 @@
     min-height: 20px
     height: $row-height
     &-info
+      position: relative
       display: flex
       justify-content: center
       align-items: center
@@ -26,6 +27,7 @@
     &-data
       display: flex
       & .column
+        position: relative
         display: flex
         justify-content: center
         align-items: center
@@ -36,6 +38,7 @@
         border: 1px solid $border-color
         border-top: none
         border-left: none
+
       & .cell
         min-width: 40px
         padding: 5px
@@ -51,3 +54,23 @@
           border: none
           outline: 1px solid blue
           z-index: 2
+  & .col-resize, .row-resize
+    position: absolute
+    bottom: 0
+    right: 0
+    background-color: blue
+    opacity: 0
+    z-index: 1000
+    transition: opacity ease 0.3s
+    &:hover
+      opacity: 1!important
+
+  & .col-resize
+    top: 0
+    width: 4px
+    cursor: col-resize
+
+  & .row-resize
+    left: 0
+    height: 4px
+    cursor: row-resize
